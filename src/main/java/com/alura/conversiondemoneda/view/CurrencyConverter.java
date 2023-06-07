@@ -27,7 +27,6 @@ public class CurrencyConverter extends JFrame {
 
     private static final String[] CURRENCIES = {"USD", "EUR", "GBP", "JPY", "CAD"};
 
-
     public CurrencyConverter() {
         setTitle("Currency Converter");
         setSize(400, 200);
@@ -55,35 +54,53 @@ public class CurrencyConverter extends JFrame {
         btnConvert.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                abrirResult();
+                Boolean validacion = validarNumero(txtAmount.getText());
+                System.out.println(validacion);
+                if (validacion == true) {
+                    abrirResult();
+                } else {
+                    System.out.println("entrando en lese"+ "     "+txtAmount.getText());
+                    Error.Err(txtAmount.getText());
+                    limpiar();
+
+                }
+
             }
         });
     }
 
     private void abrirResult() {
-        
+
         new Resultado(this);
-        
-        
-        
-        
+
         double amount = Double.parseDouble(txtAmount.getText());
         String fromCurrency = cmbFromCurrency.getSelectedItem().toString();
         String toCurrency = cmbToCurrency.getSelectedItem().toString();
-        
-        System.out.println(amount + " "+fromCurrency+" "+toCurrency);
+
+        System.out.println(amount + " " + fromCurrency + " " + toCurrency);
 
         // Aquí puedes agregar la lógica de conversión de monedas utilizando una API o tus propias tasas de cambio
-
         // Ejemplo de conversión utilizando una tasa fija
-        double conversionRate = 1.2; // Tasa de conversión ficticia
+        double conversionRate = 1.0; // Tasa de conversión ficticia
+
         double convertedAmount = amount * conversionRate;
-        Resultado.cargarResultado(convertedAmount);
+        Resultado.cargarResultado(convertedAmount, fromCurrency, toCurrency);
 
-       
-
-        
     }
 
-    
+    private static boolean validarNumero(String numero) {
+        try {
+            Integer.valueOf(numero);
+            return true;
+
+        } catch (Exception e) {
+            System.out.println("el error se tomo");
+        }
+        return false;
+
+    }
+    private void limpiar(){
+        txtAmount.setText("");
+    }
+
 }
