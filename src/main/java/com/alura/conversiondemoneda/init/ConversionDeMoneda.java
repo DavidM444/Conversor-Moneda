@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package com.alura.conversiondemoneda;
+package com.alura.conversiondemoneda.init;
 
 import com.alura.conversiondemoneda.view.CurrencyConverter;
 import javax.swing.JFrame;
