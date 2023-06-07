@@ -4,60 +4,47 @@
  */
 package com.alura.conversiondemoneda.view;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.text.DecimalFormat;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author pc
  */
-public class Resultado extends JFrame{
+public class Resultado extends JFrame {
 
- 
-    private JLabel txtResult, resLabel;
-    private DefaultTableModel modelo;
-    
-    private void cargarCampoResult(Container container){
-        txtResult = new JLabel("El resultado es: ");
-        resLabel= new JLabel();
-        
-        container.add(txtResult);
-        container.add(resLabel);
-       
-    }
-    
-
+    private static JLabel txtResult, resLabel;
 
     public Resultado(CurrencyConverter cc) {
         super("Resultado");
 
-        
-
         Container container = getContentPane();
-        setLayout(null);txtResult = new JLabel("El resultado es: ");
-        resLabel= new JLabel();
-        
-        cargarCampoResult(container);
+        setLayout(null);
+        txtResult = new JLabel("El resultado es: ");
+        resLabel = new JLabel("");
 
-   
-       
-        setSize(100, 50);
+        txtResult.setBounds(10, 10, 300, 20);
+        txtResult.setBackground(Color.red);
+        resLabel.setBounds(100, 10, 100, 20);
+        container.add(txtResult);
+
+        container.add(resLabel); 
+        setSize(200, 100);
         setVisible(true);
         setLocationRelativeTo(cc);
+        
     }
-     public static void cargarResultado(double convertedAmount) {
-         DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        String result = decimalFormat.format(amount) + " " + fromCurrency + " = " +
-                decimalFormat.format(convertedAmount) + " " + toCurrency;
 
-       //crear el resultLbl para mostrar el resultado en este
-       //resLabel.setText(result);
+    public static void cargarResultado(double convertedAmount, String fromCurrency, String toCurrency) {
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        String result = decimalFormat.format(convertedAmount) + " " + toCurrency;
+        
+        //crear el resultLbl para mostrar el resultado en este
+        resLabel.setText(result);
         System.out.println(convertedAmount);
     }
-     
-  
+
 }
