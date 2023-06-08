@@ -2,7 +2,7 @@
 Proyecto de conversion de monedas JAVA
 
 
-#Opciones de Conversion
+##Opciones de Conversion
 - USD -> Dolar
 - EUR -> Euro
 - GBP -> Libra Esterlina
