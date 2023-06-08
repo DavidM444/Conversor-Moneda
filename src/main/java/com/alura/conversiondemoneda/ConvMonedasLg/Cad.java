@@ -2,33 +2,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ConvMonedasClaa;
+package com.alura.conversiondemoneda.ConvMonedasLg;
 
 /**
  *
  * @author pc
  */
-class Gbp {
+class Cad {
 
-    double LibraEst(double amount, String toCurrency) {
-        switch (toCurrency) {
+    double DolarC(double amount, String toCurrency) {
+         switch (toCurrency) {
             case "USD":
-                amount = amount * 1.24;
+                amount = amount*0.75; 
                 break;
             case "EUR":
-                amount *= 1.16;
-
+                amount *=0.70;
+                
+                break;
+            case "GBP":
+                amount *=0.60;
+                
                 break;
             case "JPY":
-                amount *= 174.15;
-
-                break;
-            case "CAD":
-                amount *= 1.66;
-
+                amount *=104.71;
+                
                 break;
         }
         return amount;
     }
-
+    
 }

@@ -2,25 +2,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ConvMonedasClaa;
+package com.alura.conversiondemoneda.ConvMonedasLg;
 
 /**
  *
  * @author pc
  */
-class Eur {
+public class Dl {
 
-    Double Euro(double amount, String toCurrency) {
-          switch (toCurrency) {
-            case "USD":
-                amount = amount*0.93; 
+   
+    Double Dolar(double amount, String toCuerrency) {
+        
+        
+        switch (toCuerrency) {
+            case "EUR":
+                amount = amount*1.07; 
                 break;
             case "GBP":
-                amount *=0.80;
+                amount *=0.86;
                 
                 break;
             case "JPY":
-                amount *=140.03;
+                amount *=139.90;
                 
                 break;
             case "CAD":
@@ -30,5 +33,9 @@ class Eur {
         }
         return amount;
     }
+
+    
+
+   
     
 }

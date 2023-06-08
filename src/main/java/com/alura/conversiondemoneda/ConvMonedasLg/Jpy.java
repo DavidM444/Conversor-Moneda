@@ -2,40 +2,32 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ConvMonedasClaa;
+package com.alura.conversiondemoneda.ConvMonedasLg;
 
 /**
  *
  * @author pc
  */
-public class Dl {
+class Jpy {
 
-   
-    Double Dolar(double amount, String toCuerrency) {
-        
-        
-        switch (toCuerrency) {
-            case "EUR":
-                amount = amount*1.07; 
+    double Yen(double amount, String toCurrency) {
+         switch (toCurrency) {
+            case "USD":
+                amount = amount*0.0071; 
                 break;
-            case "GBP":
-                amount *=0.86;
+            case "EUR":
+                amount *=0.0067;
                 
                 break;
-            case "JPY":
-                amount *=139.90;
+            case "GBP":
+                amount *=0.0057;
                 
                 break;
             case "CAD":
-                amount *=1.34;
-                
+                amount *=0.0095;                
                 break;
         }
         return amount;
     }
-
-    
-
-   
     
 }
