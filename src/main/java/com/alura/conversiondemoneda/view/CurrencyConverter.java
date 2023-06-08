@@ -31,6 +31,7 @@ public class CurrencyConverter extends JFrame {
     public CurrencyConverter() {
         setTitle("Currency Converter");
         setSize(400, 200);
+        getContentPane().setBackground(Color.YELLOW);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
 
@@ -56,11 +57,9 @@ public class CurrencyConverter extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Boolean validacion = validarNumero(txtAmount.getText());
-                System.out.println(validacion);
                 if (validacion == true) {
                     abrirResult();
                 } else {
-                    System.out.println("entrando en lese"+ "     "+txtAmount.getText());
                     Error.Err(txtAmount.getText());
                     limpiar();
 
@@ -78,24 +77,18 @@ public class CurrencyConverter extends JFrame {
         String fromCurrency = cmbFromCurrency.getSelectedItem().toString();
         String toCurrency = cmbToCurrency.getSelectedItem().toString();
 
-        System.out.println(amount + " " + fromCurrency + " " + toCurrency);
-        
         
         Double amount2 = Cambio.cambiar(amount,fromCurrency,toCurrency);
-
-
-        //double convertedAmount = amount * conversionRate;
         Resultado.cargarResultado(amount2, fromCurrency, toCurrency);
 
     }
 
     private static boolean validarNumero(String numero) {
         try {
-            Integer.valueOf(numero);
+            Double.parseDouble(numero);
             return true;
 
-        } catch (Exception e) {
-            System.out.println("el error se tomo");
+        } catch (NumberFormatException e) {
         }
         return false;
 

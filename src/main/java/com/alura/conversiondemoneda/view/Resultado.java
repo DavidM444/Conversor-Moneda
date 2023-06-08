@@ -22,6 +22,7 @@ public class Resultado extends JFrame {
         super("Resultado");
 
         Container container = getContentPane();
+        getContentPane().setBackground(Color.GREEN);
         setLayout(null);
         txtResult = new JLabel("El resultado es: ");
         resLabel = new JLabel("");
@@ -42,9 +43,8 @@ public class Resultado extends JFrame {
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
         String result = decimalFormat.format(convertedAmount) + " " + toCurrency;
         
-        //crear el resultLbl para mostrar el resultado en este
         resLabel.setText(result);
-        System.out.println(convertedAmount);
+
     }
 
 }
