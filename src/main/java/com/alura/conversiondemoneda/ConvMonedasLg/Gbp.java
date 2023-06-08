@@ -6,7 +6,7 @@ package com.alura.conversiondemoneda.ConvMonedasLg;
 
 /**
  *
- * @author pc
+ * @author David Muñoz
  */
 class Gbp {
 

@@ -11,7 +11,6 @@ package com.alura.conversiondemoneda.ConvMonedasLg;
 public class Cambio {
 
     public static Double cambiar(double amount, String fromCurrency, String toCurrency) {
-        System.out.println("----->" + amount + fromCurrency + toCurrency);
         
 
         Dl dl = new Dl();
