@@ -8,6 +8,7 @@ package com.alura.conversiondemoneda.view;
  *
  * @author pc
  */
+import com.alura.conversiondemoneda.ConvMonedasLg.Cambio;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -78,13 +79,13 @@ public class CurrencyConverter extends JFrame {
         String toCurrency = cmbToCurrency.getSelectedItem().toString();
 
         System.out.println(amount + " " + fromCurrency + " " + toCurrency);
+        
+        
+        Double amount2 = Cambio.cambiar(amount,fromCurrency,toCurrency);
 
-        // Aquí puedes agregar la lógica de conversión de monedas utilizando una API o tus propias tasas de cambio
-        // Ejemplo de conversión utilizando una tasa fija
-        double conversionRate = 1.0; // Tasa de conversión ficticia
 
-        double convertedAmount = amount * conversionRate;
-        Resultado.cargarResultado(convertedAmount, fromCurrency, toCurrency);
+        //double convertedAmount = amount * conversionRate;
+        Resultado.cargarResultado(amount2, fromCurrency, toCurrency);
 
     }
 
